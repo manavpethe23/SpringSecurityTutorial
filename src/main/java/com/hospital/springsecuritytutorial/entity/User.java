@@ -1,22 +1,18 @@
 package com.hospital.springsecuritytutorial.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import java.io.Serializable;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
+import jakarta.persistence.Id;
 
 @Entity
 @Data
 @Builder
+@Table(name = "app_user")
 public class User  implements  UserDetails{
 
 
@@ -32,6 +28,7 @@ public class User  implements  UserDetails{
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+
         return List.of();
     }
 
